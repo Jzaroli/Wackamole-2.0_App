@@ -9,8 +9,9 @@ let sum = 0;
 const gameLogic = function() {
     const timerInterval = setInterval(function () {
         secondsLeft--;
+        const random = Math.random();
         if (secondsLeft > 0) {
-            if (secondsLeft % 5 === 0){
+            if (random <= 0.3){
                 mole1.removeAttribute("hidden");
                 mole1.addEventListener('click', givePoints, {once: true});
             } else {

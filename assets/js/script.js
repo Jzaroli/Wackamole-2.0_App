@@ -1,8 +1,11 @@
 const startButton = document.getElementById('startButton');
-const mole1 = document.getElementById('mole1');
+const mole1norm = document.getElementById('mole1norm');
+const mole1mound = document.getElementById('mole1mound');
+const mole1bday = document.getElementById('mole1bday')
+const mole1evil = document.getElementById('mole1evil')
 const score = document.getElementById('score');
 const aside = document.getElementById('aside');
-let secondsLeft = 30;
+let secondsLeft = 40;
 let sum = 0;
 
 // Game Logic:
@@ -11,32 +14,65 @@ const gameLogic = function() {
         secondsLeft--;
         const random = Math.random();
         if (secondsLeft > 0) {
-            if (random <= 0.3){
-                mole1.removeAttribute("hidden");
-                mole1.addEventListener('click', givePoints, {once: true});
-            } else {
-                mole1.setAttribute("hidden", "hidden");
+            if (random <= 0.2){
+                mole1mound.setAttribute("hidden", "hidden");
+                mole1bday.setAttribute("hidden", "hidden");
+                mole1evil.setAttribute("hidden", "hidden");
+                mole1norm.removeAttribute("hidden");
+                mole1norm.addEventListener('click', givePointsNorm, {once: true});
+            } else if (random >= 0.21 && random <= 0.30) {
+                mole1mound.setAttribute("hidden", "hidden");
+                mole1norm.setAttribute("hidden", "hidden");
+                mole1evil.setAttribute("hidden", "hidden");
+                mole1bday.removeAttribute("hidden");
+                mole1bday.addEventListener('click', givePointsBday, {once: true});
+            } else if (random >= 0.31 && random <= 0.4) {
+                mole1mound.setAttribute("hidden", "hidden");
+                mole1norm.setAttribute("hidden", "hidden");
+                mole1bday.setAttribute("hidden", "hidden");
+                mole1evil.removeAttribute("hidden");
+                mole1evil.addEventListener('click', givePointsEvil, {once: true});
+            } else if (random >= 0.41) {
+                mole1norm.setAttribute("hidden", "hidden");
+                mole1bday.setAttribute("hidden", "hidden");
+                mole1evil.setAttribute("hidden", "hidden");
+                mole1mound.removeAttribute("hidden");
             }
         } else if (secondsLeft === 0) {
             // End Game Functions:
             clearInterval(timerInterval);
             storeScore();
             renderScores();
-            mole1.removeAttribute("hidden");
-            mole1.removeEventListener('click', givePoints);
+            mole1mound.setAttribute("hidden", "hidden");
+            mole1bday.setAttribute("hidden", "hidden");
+            mole1evil.setAttribute("hidden", "hidden");
+            mole1norm.removeAttribute("hidden");
+            mole1norm.removeEventListener('click', givePointsNorm);
+            mole1bday.removeEventListener('click', givePointsBday);
+            mole1evil.removeEventListener('click', givePointsEvil);
             score.innerHTML = "score"; 
           }
-    }, 500); 
-    secondsLeft = 30;
+    }, 750); 
+    secondsLeft = 40;
     sum = 0;
 };
 
 // Starts the Game:
 startButton.addEventListener('click', gameLogic);
 
-// Points Logic:
-const givePoints = function(){
+// Points Logic for Normal Mole:
+const givePointsNorm = function(){
     sum = sum + 10;
+    score.textContent = sum
+};
+// Points Logic for Bday Mole:
+const givePointsBday = function(){
+    sum = sum + 30;
+    score.textContent = sum
+};
+// Points Logic for Evil Mole:
+const givePointsEvil = function(){
+    sum = sum - 30;
     score.textContent = sum
 };
 

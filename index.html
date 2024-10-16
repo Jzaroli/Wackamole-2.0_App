@@ -7,14 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="assets/js/script.js" type="text/javascript"></script>
-    <title>WackAMole!</title>
+    <title>WackAMole 2!</title>
 </head>
 
 <body class="bg-dark">
     <header>
         <nav class ="navbar navbar-expand{-sm|-md|-lg}">
             <!-- Game Name -->
-            <h1 class="text-success" style="margin-left: 2%;">WackAMole!</h1>
+            <h1 class="text-success" style="margin-left: 2%;">WackAMole 2!</h1>
             <!-- Modal Button for Game Directions -->
             <button type="button" class="btn btn-success text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Rules
@@ -26,7 +26,7 @@
                     <h1 class="modal-title text-success" id="exampleModalLabel">Game Rules</h1>
                   </div>
                   <div class="modal-body text-success">
-                    Click/Tap on the moles as they appear, to build up your score before time runs out!
+                    Click/Tap on the moles as they appear to build up your score! Birthday moles give you more points but watch out for the evil mole!
                   </div>
                   <div class="modal-footer">
                   <button type="button" class="btn btn-success text-dark" data-bs-dismiss="modal">Close</button>
@@ -41,8 +41,11 @@
         </nav>
     </header>
     <div class="card bg-dark" style="padding: 10px; min-height: 480px">
-        <!-- The mole-->
-        <img id="mole1" src="assets/images/mole.jpg" alt="mole" style="max-width: 50%; border-radius: 10%;">
+        <!-- The moles for mole 1-->
+        <img id="mole1norm" src="assets/images/mole1norm.jpg" alt="mole1" style="max-width: 50%; max-height: 50%; border-radius: 10%; left: 0; top: 0;">
+        <img id="mole1mound" src="assets/images/mole1mound.jpg" alt="mole1mound" hidden="hidden" style="max-width: 50%; max-height: 50%; border-radius: 10%; left: 0; top: 0;">
+        <img id="mole1bday" src="assets/images/mole1bday.jpg" alt="mole1bday" hidden="hidden" style="max-width: 50%; max-height: 50%; border-radius: 10%; left: 0; top: 0;">
+        <img id="mole1evil" src="assets/images/mole1evil.jpg" alt="mole1evil" hidden="hidden" style="max-width: 50%; max-height: 50%; border-radius: 10%; left: 0; top: 0;">
         <!-- Sidebar for scorekeeping -->
         <aside id="aside" style="position: absolute; right: 0; top: 0; max-width: 50%; padding: 20px;" class="text-success">
         </aside>
@@ -54,6 +57,5 @@
 </body>
 </html>
 
-<!-- notes
-<img src="assets/images/mole.jpg" alt="mole" style="border-radius: 10%; visibility: hidden; position: absolute; left: 0; top: 0;">
+<!-- notes: border-radius: 10%; visibility: hidden; position: absolute; left: 0; top: 0;
 -->

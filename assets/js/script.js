@@ -1,5 +1,5 @@
 const startButton = document.getElementById('startButton');
-
+// Mole Selectors:
 const mole1norm = document.getElementById('mole1norm');
 const mole1mound = document.getElementById('mole1mound');
 const mole1bday = document.getElementById('mole1bday')
@@ -8,9 +8,17 @@ const mole2norm = document.getElementById('mole2norm');
 const mole2mound = document.getElementById('mole2mound');
 const mole2bday = document.getElementById('mole2bday')
 const mole2evil = document.getElementById('mole2evil')
+const mole3norm = document.getElementById('mole3norm');
+const mole3mound = document.getElementById('mole3mound');
+const mole3bday = document.getElementById('mole3bday')
+const mole3evil = document.getElementById('mole3evil')
+const mole4norm = document.getElementById('mole4norm');
+const mole4mound = document.getElementById('mole4mound');
+const mole4bday = document.getElementById('mole4bday')
+const mole4evil = document.getElementById('mole4evil')
 
 const score = document.getElementById('score');
-const aside = document.getElementById('aside');
+const scoreSection = document.getElementById('scoreSection');
 let secondsLeft = 40;
 let sum = 0;
 
@@ -24,33 +32,53 @@ const gameLogic = function() {
             if (random < 0.1){
                 mole1Click();
                 mole2MoundAppears();
+                mole3MoundAppears();
+                mole4BdayClick();
             } else if (random >= 0.11 && random <= 0.20) {
                 mole1BdayClick();
                 mole2MoundAppears();
+                mole3MoundAppears();
+                mole4EvilClick();
             } else if (random >= 0.21 && random <= 0.3) {
                 mole1EvilClick();
                 mole2Click();
+                mole3MoundAppears();
+                mole4MoundAppears();
             } else if (random >= 0.31 && random <= 0.4) {
                 mole1Click();
                 mole2MoundAppears();
+                mole3MoundAppears();
+                mole4Click();
             } else if (random >= 0.41 && random <= 0.5) {
                 mole1MoundAppears();
-                mole2Click();
+                mole2MoundAppears();
+                mole3Click();
+                mole4MoundAppears();
             } else if (random >= 0.51 && random <= 0.6) {
                 mole1MoundAppears();
                 mole2EvilClick();
+                mole3BdayClick();
+                mole4MoundAppears();
             } else if (random >= 0.61 && random <= 0.7) {
                 mole1MoundAppears();
                 mole2MoundAppears();
+                mole3EvilClick();
+                mole4MoundAppears();
             } else if (random >= 0.71 && random <= 0.8) {
                 mole1MoundAppears();
                 mole2Click();
+                mole3MoundAppears();
+                mole4MoundAppears();
             } else if (random >= 0.81 && random <= 0.9) {
                 mole1MoundAppears();
                 mole2MoundAppears();
+                mole3Click();
+                mole4MoundAppears();
             } else if (random >= 0.91 && random <= 1) {
                 mole1MoundAppears();
                 mole2BdayClick();
+                mole3MoundAppears();
+                mole4Click();
             }    
         } else if (secondsLeft === 0) {
             // End Game Functions:
@@ -59,6 +87,8 @@ const gameLogic = function() {
             renderScores();
             mole1Reset();
             mole2Reset();
+            mole3Reset();
+            mole4Reset();
             score.innerHTML = "score"; 
         }
         }, 750); 
@@ -105,8 +135,6 @@ const mole1Reset = function () {
     mole1evil.setAttribute("hidden", "hidden");
     mole1norm.removeAttribute("hidden");
     mole1norm.removeEventListener('click', givePointsNorm);
-    mole1bday.removeEventListener('click', givePointsBday);
-    mole1evil.removeEventListener('click', givePointsEvil);
 };
 
 //Mole 2 Functions
@@ -147,9 +175,85 @@ const mole2Reset = function () {
     mole2bday.setAttribute("hidden", "hidden");
     mole2evil.setAttribute("hidden", "hidden");
     mole2norm.setAttribute("hidden", "hidden");
-    mole2norm.removeEventListener('click', givePointsNorm);
-    mole2bday.removeEventListener('click', givePointsBday);
-    mole2evil.removeEventListener('click', givePointsEvil);
+};
+//Mole 3 Functions
+//Normal Mole 3 Appears for Clicking:
+const mole3Click = function() {
+    mole3mound.setAttribute("hidden", "hidden");
+    mole3bday.setAttribute("hidden", "hidden");
+    mole3evil.setAttribute("hidden", "hidden");
+    mole3norm.removeAttribute("hidden");
+    mole3norm.addEventListener('click', givePointsNorm, {once: true});
+};
+//Bday Mole 3 Appears for Clicking:
+const mole3BdayClick = function () {
+    mole3mound.setAttribute("hidden", "hidden");
+    mole3norm.setAttribute("hidden", "hidden");
+    mole3evil.setAttribute("hidden", "hidden");
+    mole3bday.removeAttribute("hidden");
+    mole3bday.addEventListener('click', givePointsBday, {once: true});
+};
+//Evil Mole 3 Appears for Clicking:
+const mole3EvilClick = function() {
+    mole3mound.setAttribute("hidden", "hidden");
+    mole3norm.setAttribute("hidden", "hidden");
+    mole3bday.setAttribute("hidden", "hidden");
+    mole3evil.removeAttribute("hidden");
+    mole3evil.addEventListener('click', givePointsEvil, {once: true});
+};
+//Mound for Mole 3 Appears:
+const mole3MoundAppears = function () {
+    mole3norm.setAttribute("hidden", "hidden");
+    mole3bday.setAttribute("hidden", "hidden");
+    mole3evil.setAttribute("hidden", "hidden");
+    mole3mound.removeAttribute("hidden");
+};
+// Resets Mole 3 at the end of the game:
+const mole3Reset = function () {
+    mole3mound.removeAttribute("hidden");
+    mole3bday.setAttribute("hidden", "hidden");
+    mole3evil.setAttribute("hidden", "hidden");
+    mole3norm.setAttribute("hidden", "hidden");
+};
+//Mole 4 Functions
+//Normal Mole 4 Appears for Clicking:
+const mole4Click = function() {
+    mole4mound.setAttribute("hidden", "hidden");
+    mole4bday.setAttribute("hidden", "hidden");
+    mole4evil.setAttribute("hidden", "hidden");
+    mole4norm.removeAttribute("hidden");
+    mole4norm.addEventListener('click', givePointsNorm, {once: true});
+};
+//Bday Mole 4 Appears for Clicking:
+const mole4BdayClick = function () {
+    mole4mound.setAttribute("hidden", "hidden");
+    mole4norm.setAttribute("hidden", "hidden");
+    mole4evil.setAttribute("hidden", "hidden");
+    mole4bday.removeAttribute("hidden");
+    mole4bday.addEventListener('click', givePointsBday, {once: true});
+};
+//Evil Mole 4 Appears for Clicking:
+const mole4EvilClick = function() {
+    mole4mound.setAttribute("hidden", "hidden");
+    mole4norm.setAttribute("hidden", "hidden");
+    mole4bday.setAttribute("hidden", "hidden");
+    mole4evil.removeAttribute("hidden");
+    mole4evil.addEventListener('click', givePointsEvil, {once: true});
+};
+//Mound for Mole 4 Appears:
+const mole4MoundAppears = function () {
+    mole4norm.setAttribute("hidden", "hidden");
+    mole4bday.setAttribute("hidden", "hidden");
+    mole4evil.setAttribute("hidden", "hidden");
+    mole4mound.removeAttribute("hidden");
+};
+// Resets Mole 4 at the end of the game:
+const mole4Reset = function () {
+    mole4mound.setAttribute("hidden", "hidden");
+    mole4bday.setAttribute("hidden", "hidden");
+    mole4evil.setAttribute("hidden", "hidden");
+    mole4norm.removeAttribute("hidden");
+    mole4norm.removeEventListener('click', givePointsNorm);
 };
 
 // Starts the Game:
@@ -178,17 +282,17 @@ const storeScore = function () {
     localStorage.setItem('allScores', JSON.stringify(allScores));
 };
 
-// Builds p tag in aside:
+// Builds p tag in score section:
 const builElement = function () {
     const createP = document.createElement("p");
-    aside.append(createP);
+    scoreSection.append(createP);
     return {createP};
 };
 
 // Passes score to innerHTML for score message:
 const renderScores = function () {
     const getScores = JSON.parse(localStorage.getItem('allScores'));
-    aside.innerHTML = "";
+    scoreSection.innerHTML = "";
     if (!getScores) {
         return; // Exit function since there's nothing to render
     }

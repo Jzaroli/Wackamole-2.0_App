@@ -11,56 +11,69 @@
 </head>
 
 <body class="bg-dark">
-    <header>
-        <nav class ="navbar navbar-expand{-sm|-md|-lg}">
-            <!-- Game Name -->
-            <h1 class="text-success" style="margin-left: 2%;">WackAMole 2!</h1>
-            <!-- Modal Button for Game Directions -->
-            <button type="button" class="btn btn-success text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Rules
-            </button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content bg-dark">
-                  <div class="modal-header">
-                    <h1 class="modal-title text-success" id="exampleModalLabel">Game Rules</h1>
-                  </div>
-                  <div class="modal-body text-success">
-                    Click/Tap on the moles as they appear to build up your score! Birthday moles give you more points but watch out for the evil moles!
-                  </div>
-                  <div class="modal-footer">
-                  <button type="button" class="btn btn-success text-dark" data-bs-dismiss="modal">Close</button>
-                  </div>
+  <header>
+      <nav class ="navbar navbar-expand{-sm|-md|-lg}">
+          <!-- Game Name -->
+          <h1 class="text-success" style="margin-left: 2%;">WackAMole 2!</h1>
+          <!-- Modal Button for Game Directions -->
+          <button type="button" class="btn btn-success text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Rules
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-dark">
+                <div class="modal-header">
+                  <h1 class="modal-title text-success" id="exampleModalLabel">Game Rules</h1>
+                </div>
+                <div class="modal-body text-success">
+                  Click/Tap on the moles as they appear to build up your score! Birthday moles give you more points but watch out for the evil moles!
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-success text-dark" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
-            <!-- Start Button -->
-            <input id="startButton" type="submit" value="Start Game" class="btn btn-success text-dark"/>
-            <!-- Score -->
-            <h2 id="score" class="text-success" style="margin-right: 2%; opacity: 60%">score</h2>
-        </nav>
-    </header>
-    <div class="card bg-dark" style="min-height: 480px">
-        <!-- The moles for mole 1-->
-        <img id="mole1norm" src="assets/images/molenorm.jpg" alt="mole1" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; left: 0%; top: 0%;">
-        <img id="mole1mound" src="assets/images/molemound.jpg" alt="mole1mound" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; left: 0%; top: 0%;">
-        <img id="mole1bday" src="assets/images/molebday.jpg" alt="mole1bday" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; left: 0%; top: 0%;">
-        <img id="mole1evil" src="assets/images/moleevil.jpg" alt="mole1evil" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; left: 0%; top: 0%;">
-         <!-- The moles for mole 2-->
-         <img id="mole2mound" src="assets/images/molemound.jpg" alt="mole2mound" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; right: 50%; top: 0%;">
-         <img id="mole2norm" src="assets/images/molenorm.jpg" alt="mole2" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; right: 50%; top: 0%;">
-         <img id="mole2bday" src="assets/images/molebday.jpg" alt="mole2bday" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; right: 50%; top: 0%;">
-         <img id="mole2evil" src="assets/images/moleevil.jpg" alt="mole2evil" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; right: 50%; top: 0%;">
-        <!-- Sidebar for scorekeeping -->
-        <aside id="aside" style="position: absolute; right: 0; top: 0; max-width: 50%; padding: 20px;" class="text-success">
-        </aside>
+          </div>
+          <!-- Start Button -->
+          <input id="startButton" type="submit" value="Start Game" class="btn btn-success text-dark"/>
+          <!-- Score -->
+          <h2 id="score" class="text-success" style="margin-right: 2%; opacity: 60%">score</h2>
+      </nav>
+  </header>
+
+  <main>
+    <div class="bg-dark" style="position: relative; max-width: 50%;" >
+      <!-- The moles for mole 1-->  
+        <img id="mole1norm" src="assets/images/molenorm.jpg" alt="mole1" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+        <img id="mole1mound" src="assets/images/molemound.jpg" alt="mole1mound" hidden="hidden" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+        <img id="mole1bday" src="assets/images/molebday.jpg" alt="mole1bday" hidden="hidden" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+        <img id="mole1evil" src="assets/images/moleevil.jpg" alt="mole1evil" hidden="hidden" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+      <!-- The moles for mole 2-->
+        <img id="mole2mound" src="assets/images/molemound.jpg" alt="mole2mound" style="padding: 10px; max-width: 45%; right: 30%; border-radius: 10%;">
+        <img id="mole2norm" src="assets/images/molenorm.jpg" alt="mole2" hidden="hidden" style="padding: 10px; max-width: 45%; right: 30%; border-radius: 10%;">
+        <img id="mole2bday" src="assets/images/molebday.jpg" alt="mole2bday" hidden="hidden" style="padding: 10px; max-width: 45%; right: 30%; border-radius: 10%;">
+        <img id="mole2evil" src="assets/images/moleevil.jpg" alt="mole2evil" hidden="hidden" style="padding: 10px; max-width: 45%; right: 30%; border-radius: 10%;">
+      <!--  The moles for mole 3 -->
+        <img id="mole3mound" src="assets/images/molemound.jpg" alt="mole3mound" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+        <img id="mole3norm" src="assets/images/molenorm.jpg" alt="mole3" hidden="hidden" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+        <img id="mole3bday" src="assets/images/molebday.jpg" alt="mole3bday" hidden="hidden" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+        <img id="mole3evil" src="assets/images/moleevil.jpg" alt="mole3evil" hidden="hidden" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+      <!--  The moles for mole 4 -->
+        <img id="mole4norm" src="assets/images/molenorm.jpg" alt="mole4" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+        <img id="mole4mound" src="assets/images/molemound.jpg" alt="mole4mound" hidden="hidden" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+        <img id="mole4bday" src="assets/images/molebday.jpg" alt="mole4bday" hidden="hidden" style="padding: 10px; max-width: 45%; border-radius: 10%;">
+        <img id="mole4evil" src="assets/images/moleevil.jpg" alt="mole4evil" hidden="hidden" style="padding: 10px; max-width: 45%; border-radius: 10%;">
     </div>
-    <footer style="padding: 20px; position: absolute; bottom: 0px; z-index: -1;">
-        <!-- Version 1.0 creators -->
-        <h3 class="text-light" style="opacity: 80%; font-size:small;"> Created by Zachary de Hart and Johann Zaroli</h3>
-    </footer>
+
+    <!-- Sidebar for scorekeeping -->
+    <section id="scoreSection" style="padding: 10px; z-index: 1;" class="bg-dark text-success">
+    </section>
+  </main>
+
+  <footer style="padding: 15px; z-index: -1;">
+      <!-- Version 1.0 created by Zachary de Hart and Johann Zaroli-->
+      <!-- Version 2.0 credits-->
+      <h3 class="text-light" style="opacity: 80%; font-size:small;"> Created by Johann Zaroli</h3>
+  </footer>
 </body>
 </html>
-
-<!-- notes: border-radius: 10%; visibility: hidden; position: absolute; left: 0; top: 0;
--->

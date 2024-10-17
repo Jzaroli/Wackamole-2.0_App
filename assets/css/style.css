@@ -1,0 +1,50 @@
+@media screen and (max-width: 1800px) {
+    #mobile {
+        max-width: 45%;
+    }
+    img {
+        max-width: 45%;
+    }
+}
+
+@media screen and (max-width: 1372px) {
+    #mobile {
+        max-width: 50%;
+    }
+    img {
+        max-width: 45%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: large;
+    }
+    h2 {
+        font-size: large;
+    }
+    #mobile {
+        max-width: 100%;
+    }
+    img{
+        max-width: 49%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    h1 {
+        font-size: medium;
+    }
+    h2 {
+        font-size: medium;
+    }
+    button {
+        padding: -10px
+    }
+    #mobile {
+        max-width: 100%;
+    }
+    img{
+        max-width: 49%;
+    }
+}

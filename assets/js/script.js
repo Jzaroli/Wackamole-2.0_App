@@ -306,5 +306,5 @@ const renderScores = function () {
     }
 };
 
-//Renders Scores on Load from Local Storage:
+//Renders Scores from Local Storage:
 renderScores();

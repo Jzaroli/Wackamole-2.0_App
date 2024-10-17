@@ -26,7 +26,7 @@
                     <h1 class="modal-title text-success" id="exampleModalLabel">Game Rules</h1>
                   </div>
                   <div class="modal-body text-success">
-                    Click/Tap on the moles as they appear to build up your score! Birthday moles give you more points but watch out for the evil mole!
+                    Click/Tap on the moles as they appear to build up your score! Birthday moles give you more points but watch out for the evil moles!
                   </div>
                   <div class="modal-footer">
                   <button type="button" class="btn btn-success text-dark" data-bs-dismiss="modal">Close</button>
@@ -40,12 +40,17 @@
             <h2 id="score" class="text-success" style="margin-right: 2%; opacity: 60%">score</h2>
         </nav>
     </header>
-    <div class="card bg-dark" style="padding: 10px; min-height: 480px">
+    <div class="card bg-dark" style="min-height: 480px">
         <!-- The moles for mole 1-->
-        <img id="mole1norm" src="assets/images/mole1norm.jpg" alt="mole1" style="max-width: 50%; max-height: 50%; border-radius: 10%; left: 0; top: 0;">
-        <img id="mole1mound" src="assets/images/mole1mound.jpg" alt="mole1mound" hidden="hidden" style="max-width: 50%; max-height: 50%; border-radius: 10%; left: 0; top: 0;">
-        <img id="mole1bday" src="assets/images/mole1bday.jpg" alt="mole1bday" hidden="hidden" style="max-width: 50%; max-height: 50%; border-radius: 10%; left: 0; top: 0;">
-        <img id="mole1evil" src="assets/images/mole1evil.jpg" alt="mole1evil" hidden="hidden" style="max-width: 50%; max-height: 50%; border-radius: 10%; left: 0; top: 0;">
+        <img id="mole1norm" src="assets/images/molenorm.jpg" alt="mole1" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; left: 0%; top: 0%;">
+        <img id="mole1mound" src="assets/images/molemound.jpg" alt="mole1mound" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; left: 0%; top: 0%;">
+        <img id="mole1bday" src="assets/images/molebday.jpg" alt="mole1bday" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; left: 0%; top: 0%;">
+        <img id="mole1evil" src="assets/images/moleevil.jpg" alt="mole1evil" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; left: 0%; top: 0%;">
+         <!-- The moles for mole 2-->
+         <img id="mole2mound" src="assets/images/molemound.jpg" alt="mole2mound" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; right: 50%; top: 0%;">
+         <img id="mole2norm" src="assets/images/molenorm.jpg" alt="mole2" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; right: 50%; top: 0%;">
+         <img id="mole2bday" src="assets/images/molebday.jpg" alt="mole2bday" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; right: 50%; top: 0%;">
+         <img id="mole2evil" src="assets/images/moleevil.jpg" alt="mole2evil" hidden="hidden" style="padding: 10px; max-width: 25%; border-radius: 10%; position: absolute; right: 50%; top: 0%;">
         <!-- Sidebar for scorekeeping -->
         <aside id="aside" style="position: absolute; right: 0; top: 0; max-width: 50%; padding: 20px;" class="text-success">
         </aside>

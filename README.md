@@ -8,7 +8,7 @@ This fun game is intended for all ages! Just click the start button!
 Easy to use UI/UX built with the Bootstrap CSS Framework. The game itself uses a number of JS functions to set a game timer, populate a mole at a set increment and count the points on click. The points are stored in local storage and returned on the page. 
 ### Version 2:
 Updated UI to be responsive for an optimized mobile browser experience. Added a randomizer to the moles. Added 3 more moles for a more engaging experience.  
-[Link to the Game.](https://jzaroli.github.io/wackamole-2.0/)  
+[Link to the Game.](https://jzaroli.github.io/Wackamole-2.0_JS-Game/)
 
 Screenshot:  
 ![Alt text](assets/images/readme.jpg)
